@@ -59,12 +59,13 @@ socket.on(ACTIONS.OFFER_ICE, sendIce(socket));
 
 In order to use a video conferencing site you have to create an account. It can be either a **client** (requires username and password) or a **guest** (requires only email verification, lasts for 30 minutes) account. 
 
-After logging into an account, the server returns an access token (in a response) and a refresh token (in a cookie).
+After logging into an account, the server returns an access token (in a response).
+
 <img width="737" alt="Screenshot 2024-03-30 at 15 07 07" src="https://github.com/lavrentyevn/webrtc-video-conference-backend-javaspring/assets/111048277/feca0659-7a37-494d-b84f-2326be6c587b">
 
-<img width="733" alt="Screenshot 2024-03-30 at 15 08 05" src="https://github.com/lavrentyevn/webrtc-video-conference-backend-javaspring/assets/111048277/31713120-c927-47c6-97bd-c79a580c4404">
+It also returns a refresh token (in a cookie).
 
-<img width="775" alt="Снимок экрана 2023-11-13 в 12 05 12" src="https://github.com/lavrentyevn/authbackend/assets/111048277/bb559b5b-98e3-4134-a1d6-03df035e64ff">
+<img width="733" alt="Screenshot 2024-03-30 at 15 08 05" src="https://github.com/lavrentyevn/webrtc-video-conference-backend-javaspring/assets/111048277/31713120-c927-47c6-97bd-c79a580c4404">
 
 It is important to note that passwords are **not** stored in a decoded state. Any password is stored as a **hash**, which can be obtained by a password hashing algorithm, such as **bcrypt**.
 
