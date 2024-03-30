@@ -4,6 +4,7 @@ import com.nikolay.dto.UserLoginResponseDTO;
 import com.nikolay.dto.CreateClientDTO;
 import com.nikolay.dto.LoginClientDTO;
 import com.nikolay.services.ClientService;
+import jakarta.mail.MessagingException;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,7 @@ public class ClientController {
     }
 
     @PostMapping
-    public void createClient(@RequestBody CreateClientDTO clientDTO) { clientService.createClient(clientDTO); }
+    public void createClient(@RequestBody CreateClientDTO clientDTO) throws MessagingException { clientService.createClient(clientDTO); }
 
     @PostMapping("/login")
     public UserLoginResponseDTO loginClient(@RequestBody LoginClientDTO loginClientDTO, HttpServletResponse response) { return clientService.loginClient(loginClientDTO, response); }

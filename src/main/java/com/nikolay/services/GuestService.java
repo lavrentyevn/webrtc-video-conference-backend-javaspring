@@ -9,6 +9,7 @@ import com.nikolay.jwt.JwtService;
 import com.nikolay.models.Guest;
 import com.nikolay.models.UserModel;
 import com.nikolay.repositories.GuestRepository;
+import jakarta.mail.MessagingException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +41,7 @@ public class GuestService {
     }
 
     @Transactional
-    public void createGuest(CreateGuestDTO createGuestDTO) {
+    public void createGuest(CreateGuestDTO createGuestDTO) throws MessagingException {
         // check if already exists
         Guest guest = guestRepository.findByUserModelEmail(createGuestDTO.getEmail()).orElse(null);
         if (guest != null) throw new EmailExistsException();

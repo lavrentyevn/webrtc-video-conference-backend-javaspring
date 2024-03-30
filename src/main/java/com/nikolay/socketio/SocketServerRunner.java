@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 public class SocketServerRunner implements CommandLineRunner {
 
     private final SocketIOServer server;
-//    @Autowired
-//    private GuestRepository guestRepository;
+    @Autowired
+    private GuestRepository guestRepository;
 
     @Autowired
     public SocketServerRunner(SocketIOServer server) {
@@ -21,6 +21,6 @@ public class SocketServerRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         server.start();
-//        guestRepository.deleteAll();
+        guestRepository.deleteAll();
     }
 }

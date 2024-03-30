@@ -11,6 +11,7 @@ import com.nikolay.models.UserModel;
 import com.nikolay.repositories.ClientRepository;
 import com.nikolay.repositories.GuestRepository;
 import com.nikolay.repositories.UserModelRepository;
+import jakarta.mail.MessagingException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +51,7 @@ public class ClientService {
     }
 
     @Transactional
-    public void createClient(CreateClientDTO clientDTO) {
+    public void createClient(CreateClientDTO clientDTO) throws MessagingException {
         // check if there is a guest with this email
         Guest guest = guestRepository.findByUserModelEmail(clientDTO.getEmail()).orElse(null);
         if (guest != null) {

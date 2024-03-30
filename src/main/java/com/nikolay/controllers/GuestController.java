@@ -3,6 +3,7 @@ package com.nikolay.controllers;
 import com.nikolay.dto.UserLoginResponseDTO;
 import com.nikolay.dto.CreateGuestDTO;
 import com.nikolay.services.GuestService;
+import jakarta.mail.MessagingException;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class GuestController {
     }
 
     @PostMapping
-    public void createGuest(@RequestBody CreateGuestDTO createGuestDTO) {
+    public void createGuest(@RequestBody CreateGuestDTO createGuestDTO) throws MessagingException {
         guestService.createGuest(createGuestDTO);
     }
 
