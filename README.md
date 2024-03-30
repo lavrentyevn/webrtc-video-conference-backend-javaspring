@@ -59,7 +59,10 @@ socket.on(ACTIONS.OFFER_ICE, sendIce(socket));
 
 In order to use a video conferencing site you have to create an account. It can be either a **client** (requires username and password) or a **guest** (requires only email verification, lasts for 30 minutes) account. 
 
-You can send a JSON object consisting of a username and a password to a non-protected API, which will check if there is already a user with such a username in a database and, if not, save your data and send a 200 status message.
+After logging into an account, the server returns an access token (in a response) and a refresh token (in a cookie).
+<img width="737" alt="Screenshot 2024-03-30 at 15 07 07" src="https://github.com/lavrentyevn/webrtc-video-conference-backend-javaspring/assets/111048277/feca0659-7a37-494d-b84f-2326be6c587b">
+
+<img width="733" alt="Screenshot 2024-03-30 at 15 08 05" src="https://github.com/lavrentyevn/webrtc-video-conference-backend-javaspring/assets/111048277/31713120-c927-47c6-97bd-c79a580c4404">
 
 <img width="775" alt="Снимок экрана 2023-11-13 в 12 05 12" src="https://github.com/lavrentyevn/authbackend/assets/111048277/bb559b5b-98e3-4134-a1d6-03df035e64ff">
 
@@ -93,7 +96,7 @@ List of API:
 
 ## Email verification
 
-Clients and guests have to verify their accounts.
+Clients and guests have to verify their accounts after creating them.
 
 <img width="790" alt="Screenshot 2024-02-23 at 17 03 22" src="https://github.com/lavrentyevn/webrtc-video-conference-backend/assets/111048277/cb3b54db-873f-41ea-8631-621e2580cf68">
 
