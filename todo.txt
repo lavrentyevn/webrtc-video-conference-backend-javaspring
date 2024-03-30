@@ -1,0 +1,21 @@
+TODO
+
+persist login on front works only on refresh thats why access login in 1 hour
+exception for jwt expired
+make email letter better
+
+
+exceptions:
+Username is already used 409
+Email is already used 409
+User not found 404
+Room not found 404
+Room with this name already exists 409
+Wrong password 401
+This user is not invited 403
+Event not found 404
+User is already verified 409
+User is not verified 403
+Token is invalid 403
+Token has expired 403
+User is already in this room 403
